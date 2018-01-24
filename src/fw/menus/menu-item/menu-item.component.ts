@@ -39,7 +39,7 @@ export class MenuItemComponent implements OnInit {
   }
 
   checkActiveRoute(route: string) {
-    this.isActiveRoute = (route == '/' + this.item.route);
+    this.isActiveRoute = (route === '/' + this.item.route);
   }
 
   ngOnInit() : void {
@@ -94,8 +94,8 @@ export class MenuItemComponent implements OnInit {
       }
   }
 
-  @HostListener('mouseenter') 
-  onMouseEnter() : void {
+  @HostListener('mouseenter')
+  onMouseEnter(): void {
       if (!this.menuService.isVertical) {
           if (this.item.submenu) {
               this.mouseInItem = true;
